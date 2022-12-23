@@ -54,7 +54,7 @@ const App = () => {
       axios.post('https://phonebookbackend-anmolp476.onrender.com/api/persons', newPersonObj)
         .then(res => console.log(res))
       setPersons(persons.concat(newPersonObj));
-      //window.location.reload(false);
+      window.location.reload(false);
     }
   }
 
@@ -94,6 +94,7 @@ const App = () => {
     persons = persons.filter((person) => { person.id != event.target.id; })
     setPersons(persons);
     axios.delete(`https://phonebookbackend-anmolp476.onrender.com/api/persons/${event.target.id}`)
+    window.location.reload(false);
   }
 
 
