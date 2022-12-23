@@ -20,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get("https://phonebookbackend-anmolp476.onrender.com")
+      .get("https://phonebookbackend-anmolp476.onrender.com/api/persons")
       .then(response => {
         console.log(response.data);
         setPersons(response.data)
@@ -51,7 +51,7 @@ const App = () => {
         name: newName,
         number: newNum
       };
-      axios.post('https://phonebookbackend-anmolp476.onrender.com', newPersonObj)
+      axios.post('https://phonebookbackend-anmolp476.onrender.com/api/persons', newPersonObj)
         .then(res => console.log(res))
       setPersons(persons.concat(newPersonObj));
       window.location.reload(false);
@@ -93,7 +93,7 @@ const App = () => {
     console.log(event.target.id)
     persons = persons.filter((person) => { person.id != event.target.id; })
     setPersons(persons);
-    axios.delete(`https://phonebookbackend-anmolp476.onrender.com/${event.target.id}`)
+    axios.delete(`https://phonebookbackend-anmolp476.onrender.com/api/persons/${event.target.id}`)
   }
 
 
