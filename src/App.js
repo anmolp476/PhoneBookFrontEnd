@@ -90,7 +90,7 @@ const App = () => {
   const deleteFunc = (event) => {
     console.log(event.target.id)
     //persons = persons.filter((person) => { person.id !== event.target.id; })
-    axios.delete(`http://localhost:3001/api/persons/${event.target.id}`)
+    axios.delete(`https://phonebookbackend-production-942d.up.railway.app/api/persons/${event.target.id}`)
     //setPersons(persons);
     window.location.reload(false);
   }
