@@ -31,7 +31,7 @@ const App = () => {
 
   //event handler for onSubmit for form element
   const addPerson = (event) => {
-    event.preventDefault();
+    //event.preventDefault();
     persons.forEach((person) => {
       //check if there are duplicates
       if (person.name === newName) {
@@ -54,7 +54,7 @@ const App = () => {
       axios.post('https://phonebookbackend-anmolp476.onrender.com/api/persons', newPersonObj)
         .then(res => console.log(res))
       setPersons(persons.concat(newPersonObj));
-      window.location.reload(false);
+      //window.location.reload(false);
     }
   }
 
