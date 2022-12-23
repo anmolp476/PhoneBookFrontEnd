@@ -94,6 +94,7 @@ const App = () => {
     persons = persons.filter((person) => { person.id != event.target.id; })
     setPersons(persons);
     axios.delete(`https://phonebookbackend-production-942d.up.railway.app/api/persons/${event.target.id}`)
+    window.location.reload(false);
   }
 
 
