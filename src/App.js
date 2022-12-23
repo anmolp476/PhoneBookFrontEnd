@@ -31,7 +31,7 @@ const App = () => {
 
   //event handler for onSubmit for form element
   const addPerson = (event) => {
-    //event.preventDefault();
+    event.preventDefault();
     persons.forEach((person) => {
       //check if there are duplicates
       if (person.name === newName) {
@@ -93,8 +93,7 @@ const App = () => {
     console.log(event.target.id)
     persons = persons.filter((person) => { person.id != event.target.id; })
     setPersons(persons);
-    axios.delete(`https://phonebookbackend-anmolp476.onrender.com/api/persons/${event.target.id}`)
-    window.location.reload(false);
+    axios.delete(`https://phonebookbackend-anmolp476.onrender.com/api/persons${event.target.id}`)
   }
 
 
